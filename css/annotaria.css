@@ -1,0 +1,257 @@
+
+/* Normalizzazione stile documenti (jats-preview.css) */
+div.panel{
+	font-size:100%;
+	padding:0px 0px 0px 0px;
+	margin-top:0px;
+	border-color:#ddd;
+}
+
+li,div{
+	margin-top:0px;
+}
+
+/* ----------------------------------------- */
+
+/* Normalizzazione stile bootstrap (bootstrap.css) */
+body {
+  	padding-top: 20px;
+  	padding-bottom: 20px;
+}
+
+a:hover, a:active, a:focus {
+	text-decoration: none;
+	outline: 0;
+}
+
+/* ----------------------------------------- */
+
+.color_denotesPerson {
+	background-color: #E4DEE6;				/* bright -85% */ 
+	border-bottom: #443647 solid 2px;
+	border-top: #443647 solid 2px;
+	cursor: help;
+}
+
+.color_denotesPlace {
+	background-color: #D2E4F0;
+	border-bottom: #1D415B solid 2px;
+	border-top: #1D415B solid 2px;
+	cursor: help;
+}
+
+.color_denotesDisease {
+	background-color: #F6E1E0;
+	border-bottom: #C73935 solid 2px;
+	border-top: #C73935 solid 2px;
+	cursor: help;
+}
+
+.color_hasSubject {
+	background-color: #FBEEDB;
+	border-bottom: #E69215 solid 2px;
+	border-top: #E69215 solid 2px;
+	cursor: help;
+}
+
+.color_relatesTo {
+	background-color: #F6F3F0;
+	border-bottom: #C8B49C solid 2px;
+	border-top: #C8B49C solid 2px;
+	cursor: help;
+}
+
+.color_hasClarity {
+	background-color: #F2F4F6;
+	border-bottom: #AEBAC6 solid 2px;
+	border-top: #AEBAC6 solid 2px;
+	cursor: help;
+}
+
+.color_hasOriginality {
+	background-color: #D0F0D0;			/* #EBE0EA */
+	border-bottom: #6F4668 solid 2px;
+	border-top: #6F4668 solid 2px;
+	cursor: help;
+}
+
+.color_hasFormatting {
+	background-color: #F2E7EE;
+	border-bottom: #AC5F93 solid 2px;
+	border-top: #AC5F93 solid 2px;
+	cursor: help;
+}
+
+.color_cites {
+	background-color: #DCEDEC;
+	border-bottom: #38706D solid 2px;
+	border-top: #38706D solid 2px;
+	cursor: help;
+}
+
+.color_hasComment {
+	background-color: #E4EEE0;
+	border-bottom: #557C45 solid 2px;
+	border-top: #557C45 solid 2px;
+	cursor: help;
+}
+
+.color_multiLayer {
+	background-color: Gold;
+	border-bottom: red dotted 2px;
+	border-top: red dotted 2px;
+	cursor: help;
+}
+
+/* ----------------------------------------- */
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+/* ----------------------------------------- */
+
+.wait_image {
+	display : block;
+	margin-left : auto;
+	margin-right : auto;
+}
+
+/* ----------------------------------------- */
+
+.center_pos {
+	display : block;
+	margin-left : auto;
+	margin-right : auto;
+}
+
+/* ----------------------------------------- */
+
+.text-ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* ----------------------------------------- */
+
+.pan_doc_box {
+	height: 500px;
+	overflow: auto;		/* Abilitiamo le scrollbar */
+	background-color: white;
+}
+
+/* ----------------------------------------- */
+
+.barra_super {
+	background-color: rgb(210, 250, 210);
+}
+
+/* ----------------------------------------- */
+
+.backgroundYellow {
+    background: #AF0;
+}
+
+/* ----------------------------------------- */
+
+.divtoBlink {
+    -webkit-transition: background 1.0s ease-in-out;
+    -moz-transition:    background 1.0s ease-in-out;
+    -ms-transition:     background 1.0s ease-in-out;
+    transition:         background 1.0s ease-in-out;
+}
+
+/* ----------------------------------------- */
+
+.intesta_annotazioni {
+	margin: 1.5em 1.5em 1.5em 1.5em;
+}
+
+/* ----------------------------------------- */
+
+.input_top {
+	margin-top: 10px;
+	width: 100%;
+}
+
+.input_head_em {
+	width: 7em;
+	text-align: left;
+}
+
+/* ----------------------------------------- */
+
+.collapse_main {
+	border-top: -0.5em;
+	margin-top: -0.5em; 
+	padding-top: -0.5em;
+	height: 1em;
+}
+
+.collapse_component {
+	margin-top: 1px; 
+	margin-bottom: 1px; 
+}
+
+.collapse_bar_a1 {
+	font-weight: bold;
+}
+
+/* ----------------------------------------- */
+
+.dropdown-top {
+	z-index: 2000;
+}
+
+.dropdown-scroll {
+	width: 20em;
+	height: 180px;
+	overflow:scroll;
+}
+
+/* ----------------------------------------- */
+
+.check_frammenti_left {
+	color: gray;
+	border: 0px;
+	background-color: white;
+}
+
+.check_frammenti_titolo {
+	color: gray;
+	background-color: white;
+
+}  
+
+.check_frammenti_right {
+	width: 5em;
+	color: gray;
+	border: 0px;
+	background-color: white;
+}
+
+/* ----------------------------------------- */
+
+.tab_annota {
+	margin-right : 1.5em;	
+}
+
+.tab_annota tr td:first-child {
+	padding-right : 1em;
+	font-weight : bold;
+}
+
+/* ----------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,293 @@
+<!-- ######################################################################################## -->
+<!-- Chi siamo -->
+
+<div id="chi_siamo_info" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h2 class="modal-title" style="color: DeepSkyBlue; ">Credits</h2>
+			</div>
+			<div class="modal-body">
+				<h3 style="color: LightSkyBlue; ">Progetto AnnOtaria</h3>
+				<h4>Università degli studi di Bologna</h4>
+				<h5>Anno accademico 2013 / 2014</h5>
+				<hr>
+				<h3 style="color: LightSkyBlue; ">Autore</h3>
+				<h4>Carlo Rimondi</h4>
+				<h5>carlo.rimondi@studio.unibo.it</h5>
+				<hr>
+				
+				<div class="panel-group" id="checkUp_table" >
+                    <div class="panel panel-info">
+                        <div class="panel-heading" style="height: 1.5em;">
+                            <h4 class="panel-title" style="margin-top: -0.6em; ">
+                                <a id="a_checkUp_collapse" class="fa fa-sort" data-toggle="collapse" data-parent="#checkUp_table" href="#checkUp_collapse">        
+                                    Sviluppo
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="checkUp_collapse" class="panel-collapse collapse">
+                            <div id="checkUp_collapse_body" class="panel-body">
+                                <h6 id="checkUp_jQuery_version">&nbsp;</h6> 
+                                <h6>Bootstrap : 3.1.1</h6>
+                                <hr>
+                                <h6 id="checkUp_php_version">&nbsp;</h6>
+                                <h6 id="checkUp_php_rootDir">&nbsp;</h6>
+                                <hr>
+                                <h6 id="checkUp_py_version">&nbsp;</h6>
+                                <h6 id="checkUp_py_rootDir">&nbsp;</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">Chiudi</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- ######################################################################################## -->
+<!-- Warning modalità scrittore -->
+
+<div class="modal fade" id="edit_fail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3 class="modal-title" id="myModalLabel_editFail">Attenzione</h3>
+			</div>
+			<div class="modal-body">
+        		<h4>E' possibile editare solo in modalità "Scrittore"</h4>
+        		<h4>Premere il simbolo &nbsp;&nbsp;<a class="fa fa-retweet">&nbsp;</a></h4>
+      		</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+      		</div>
+		</div>
+	</div>
+</div>
+
+<!-- ######################################################################################## -->
+<!-- Warning seleziona documento -->
+
+<div class="modal fade" id="warn_select_doc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3 class="modal-title" id="myModalLabel_warnSelectDoc">Attenzione</h3>
+			</div>
+			<div class="modal-body">
+        		<h4>Selezionare un documento per cominciare</h4>
+      		</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+      		</div>
+		</div>
+	</div>
+</div>
+		
+<!-- ######################################################################################## -->
+<!-- Warning nessuna annotazione pendente -->
+
+<div class="modal fade" id="warn_nessuna_annotazione_pendente" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3 class="modal-title" id="myModalLabel_warnNoEdgeNote">Info</h3>
+			</div>
+			<div class="modal-body">
+        		<h4>Nessuna annotazione pendente da gestire</h4>
+        		<h4>Premere il simbolo &nbsp;&nbsp;<a class="fa fa-edit">&nbsp;</a>per inserire nuove annotazioni</h4>
+      		</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+      		</div>
+		</div>
+	</div>
+</div>		
+		
+<!-- ######################################################################################## -->
+<!-- Info annotazioni -->
+
+<div class="modal fade" id="info_point_annotazioni" tabindex="-1" role="dialog" aria-labelledby="info_point_myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title" id="info_point_myModalLabel_warnNoEdgeNote">Info Annotazioni</h3>
+            </div>
+            <div id="info_point_annotazioni_body" class="modal-body">
+                
+                <!-- Modal BODY -->
+                
+                &nbsp;
+                
+                <!-- End Modal BODY -->
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ######################################################################################## -->
+<!-- Main passwd -->
+
+<div class="modal fade" id="modal_main_passwd">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Inserisci la password</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="mainInputPassword">Password</label>
+                    <input type="password" class="form-control" id="mainInputPassword" placeholder="Password">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Check</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('#modal_main_passwd').on ('hidden.bs.modal', function () { main_passwd_check ($('#mainInputPassword').val ()); return false; });
+</script>
+
+<!-- ######################################################################################## -->
+<!-- Annotator Login -->
+
+<div class="modal fade" id="modal_annota_login">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Inserisci le credenziali</h4>
+            </div>
+            <div class="modal-body">
+                <div class="input-group input_top">
+                    <span class="input-group-addon input_head_em">Nome</span>
+                    <input id="nome_annota_login" type="text" class="form-control" placeholder="Default">
+                </div>
+                <div class="input-group input_top">
+                    <span class="input-group-addon input_head_em">Email</span>
+                    <input id="email_annota_login" type="text" class="form-control" placeholder="email@default.it">
+                </div>           
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Annulla</button>
+                <button id="conferma_annota_login" type="button" class="btn btn-success" data-dismiss="modal">Conferma</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('body').on ('click', '#conferma_annota_login', function () { credenziali_annotatore ($('#nome_annota_login').val (), $('#email_annota_login').val ()); return false; });
+</script>
+
+<!-- ######################################################################################## -->
+<!-- Chi siamo -->
+
+<div id="help_panel" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style = "background-color: LightGreen; ">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h2 class="modal-title" style="color: Maroon; ">Help</h2>
+            </div>
+            <div class="modal-body">
+                
+                
+                
+                <div class="panel-group" id="accordion_help">
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion_help" href="#collapseOne_help">
+                                  Modalità lettore
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne_help" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <p>Seleziona un documento per cominciare</p>
+                                <p>E' possibile visualizzare le annotazioni relativa al documento mediante la sezione espandibile intitolata "Meta Documento"</p>
+                                <p>E' possibile filtrare per tipo, autore e date le annotazioni riportare sul testo tramite gli strumenti a disposizione nella sezione "Filtri"</p>
+                                <p>Cliccando sulle porzioni di testo evidenziate è possibile visualizzazre informazioni aggiuntive</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion_help" href="#collapseTwo_help">
+                                    Modalità scrittore
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo_help" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>E' possibile fare tutto ciò che è descritto nella modalità lettore</p>
+                                <p>E' possibile inserire delle annotazioni su documenti e frammenti. La sezione relativa ai frammenti sarà accessibile solo in presenza di una porzione di testo evidenziata</p>
+                                <p>Le annotazioni inserite possono essere modificate o cancellate prima del salvataggio</p>
+                                <p>Il pannello di modifica presenta il pulsante "Salva sul 3Store" che permette il salvataggio delle annotazioni nell'archivio remoto</p>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion_help" href="#collapseThree_help">
+                                    Funzioni principali
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree_help" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <h4 class="fa fa-retweet">&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;Modalità lettore - annotatore</h4>
+                                <h4 class="fa fa-edit">&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;Inserisce nuove annotazioni</h4>
+                                <h4 class="fa fa-save">&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;Modifica e salva annotazioni</h4>
+                                <h4 class="fa fa-question-circle">&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;Help</h4>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+      
+      
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Chiudi</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- ######################################################################################## -->
+
+
+
+
+
+
+
+
+
+
+
+

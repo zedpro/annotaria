@@ -1,0 +1,854 @@
+<div class="modal fade" id="annotaDoc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-refresh="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3 class="modal-title" id="myModalLabel_annotaDoc">Annotazioni</h3>
+			</div>
+			<div class="modal-body">
+				<!-- Tabpane - Dropdown -->
+				<div class="bs-example bs-example-tabs">
+					
+					<ul id="myTab_annotazioni" class="nav nav-tabs" role="tablist"> 
+						
+						<!-- Documento -->
+						<li id="myTabDrop_doc" class="dropdown" style="z-index: 2050;"> 
+							<a href="#" id="myTabDrop_annotaDocumento" class="dropdown-toggle" data-toggle="dropdown">Documento<span class="caret"></span></a> 
+							<ul id="myTabDrop_annotaDocumento_ul" class="dropdown-menu" role="menu" aria-labelledby="myTabDrop_annotaDoc"> 
+								<li><a href="#adl_hasAuthor" tabindex="-1" role="tab" data-toggle="tab">Autore</a></li> 
+								<li><a href="#adl_hasPublisher" tabindex="-1" role="tab" data-toggle="tab">Editore</a></li>
+								<li><a href="#adl_hasPubYear" tabindex="-1" role="tab" data-toggle="tab">Anno</a></li> 
+								<li><a href="#adl_hasTitle" tabindex="-1" role="tab" data-toggle="tab">Titolo</a></li>
+								<li><a href="#adl_hasShortTitle" tabindex="-1" role="tab" data-toggle="tab">Titolo breve</a></li>
+								<li><a href="#adl_hasAbstract" tabindex="-1" role="tab" data-toggle="tab">Abstract</a></li> 
+								<li><a href="#adl_hasComment_doc" tabindex="-1" role="tab" data-toggle="tab">Commento personale</a></li> 
+							</ul> 
+						</li> 
+					 
+					 	<!-- Frammento -->
+						<li id="myTabDrop_fra" class="dropdown dropdown-top" style="z-index: 2050;"> 
+							<a href="#" id="myTabDrop_annotaFrammento" class="dropdown-toggle" data-toggle="dropdown">Frammento<span class="caret"></span></a> 
+							<ul id="myTabDrop_annotaFrammento_ul" class="dropdown-menu" role="menu" aria-labelledby="myTabDrop_annotaDoc"> 
+								<li><a href="#adl_denotesPerson" tabindex="-1" role="tab" data-toggle="tab">Persona</a></li> 
+								<li><a href="#adl_denotesPlace" tabindex="-1" role="tab" data-toggle="tab">Luogo</a></li>
+								<li><a href="#adl_denotesDisease" tabindex="-1" role="tab" data-toggle="tab">Malattia</a></li> 
+								<li><a href="#adl_hasSubject" tabindex="-1" role="tab" data-toggle="tab">Argomento</a></li>
+								<li><a href="#adl_relatesTo" tabindex="-1" role="tab" data-toggle="tab">DBPedia</a></li>
+								<li><a href="#adl_hasClarityScore" tabindex="-1" role="tab" data-toggle="tab">Chiarezza</a></li>
+								<li><a href="#adl_hasOriginalityScore" tabindex="-1" role="tab" data-toggle="tab">Originalità</a></li>
+								<li><a href="#adl_hasFormattingScore" tabindex="-1" role="tab" data-toggle="tab">Presentazione</a></li>
+								<li><a href="#adl_cites" tabindex="-1" role="tab" data-toggle="tab">Citazione</a></li>
+								<li><a href="#adl_hasComment" tabindex="-1" role="tab" data-toggle="tab">Commento personale</a></li> 
+							</ul> 
+						</li>
+					</ul> 
+					
+					<div id="myTabContent" class="tab-content"> 
+						<div class="tab-pane fade in active" id="adl_home">
+							<p>&nbsp;</p> 
+							<h4>Seleziona un tipo di annotazione</h4> 
+						</div> 
+						
+						<!-- ##################################################################### -->
+						<!-- ##################################################################### -->
+						<!-- ##################################################################### -->
+						<!-- Documento -->
+						<!-- ##################################################################### -->
+						<!-- ##################################################################### -->
+						<!-- ##################################################################### -->
+						
+		<!-- ..................................................................................... -->						
+						<!-- Autore --> 
+						<form class="tab-pane fade" id="adl_hasAuthor">
+							<h3 class="modal-title">Autore</h3> 
+							<p class="intesta_annotazioni">
+								<a class="fa fa-info-circle" href="#" data-toggle="tooltip" data-placement="bottom" title="Seleziona un autore esistente oppure compila i campi sottostanti per aggiungerne uno nuovo">
+									&nbsp;&nbsp;
+								</a>
+								Associa un autore al documento
+							</p>
+							<div id="dropdown_hasAuthor_parent" class="dropdown dropdown-top">
+								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu_hasAuthor" data-toggle="dropdown">
+									Seleziona un autore
+									<span class="caret"></span>
+								</button>
+								<ul id="dropdown_hasAuthor" class="dropdown-menu dropdown-scroll" role="menu" aria-labelledby="dropdownMenu_hasAuthor">
+									<li><a href="#">Sto caricando la lista ...</a></li>
+									<img class="wait_image" src="images/wait_circle.gif" />
+								</ul>
+							</div>
+							<div class="input-group input_top">
+								<span class="input-group-addon input_head_em">ID</span>
+								<input id="id_hasAuthor" name="id_hasAuthor" type="text" class="form-control" placeholder="Identificativo">
+							</div>
+							<div class="input-group input_top">
+								<span class="input-group-addon input_head_em">Nome</span>
+								<input id="nome_hasAuthor" name="nome_hasAuthor" type="text" class="form-control" placeholder="Nome e cognome">
+							</div>
+							<div class="input-group input_top">
+								<span class="input-group-addon input_head_em">Email</span>
+								<input id="email_hasAuthor" name="email_hasAuthor" type="text" class="form-control" placeholder="E-mail">
+							</div>
+							<div class="form-group input_top">
+								<div>
+									<a id="submit_hasAuthor" class="btn btn-primary" href="#" role="button">Conferma</a>
+								</div>
+							</div>
+							<script type="text/javascript">
+								$('a#submit_hasAuthor').unbind ('click');
+								$('a#submit_hasAuthor').click (function() { ma_hasAuthor (); return false; });
+								$('#dropdown_hasAuthor_parent').unbind ('shown.bs.dropdown');
+								$('#dropdown_hasAuthor_parent').on ('shown.bs.dropdown', function () { ma_hasAuthor_load_drop (); return false; });
+							</script> 
+						</form>
+							
+		<!-- ..................................................................................... -->							
+						<!-- Editore -->						 
+						<form class="tab-pane fade" id="adl_hasPublisher">
+							<h3 class="modal-title">Editore</h3> 
+							<p class="intesta_annotazioni">
+								<a class="fa fa-info-circle" href="#" data-toggle="tooltip" data-placement="bottom" title="Seleziona un editore esistente oppure compila i campi sottostanti per aggiungerne uno nuovo">
+									&nbsp;&nbsp;
+								</a>
+								Associa un editore al documento
+							</p>
+							<div id="dropdown_hasPublisher_parent" class="dropdown dropdown-top">
+								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu_hasPublisher" data-toggle="dropdown">
+									Seleziona un editore
+									<span class="caret"></span>
+								</button>
+								<ul id="dropdown_hasPublisher" class="dropdown-menu dropdown-scroll" role="menu" aria-labelledby="dropdownMenu_hasPublisher">
+									<li><a href="#">Sto caricando la lista ...</a></li>
+									<img class="wait_image" src="images/wait_circle.gif" />
+								</ul>
+							</div>
+							<div class="input-group input_top">
+								<span class="input-group-addon input_head_em">ID</span>
+								<input id="id_hasPublisher" name="id_hasPublisher" type="text" class="form-control" placeholder="Identificativo">
+							</div>
+							<div class="input-group input_top">
+								<span class="input-group-addon input_head_em">Nome</span>
+								<input id="nome_hasPublisher" name="nome_hasPublisher" type="text" class="form-control" placeholder="Nome e cognome">
+							</div>
+							<div class="input-group input_top">
+								<span class="input-group-addon input_head_em">Home Page</span>
+								<input id="homep_hasPublisher" name="homep_hasPublisher" type="text" class="form-control" placeholder="Home page">
+							</div>
+							<div class="form-group input_top">
+								<div>
+									<a id="submit_hasPublisher" class="btn btn-primary" href="#" role="button">Conferma</a>
+								</div>
+							</div>
+							<script type="text/javascript">
+								$('a#submit_hasPublisher').unbind ('click');
+								$('a#submit_hasPublisher').click (function() { ma_hasPublisher (); return false; });
+								$('#dropdown_hasPublisher_parent').unbind ('shown.bs.dropdown');
+								$('#dropdown_hasPublisher_parent').on ('shown.bs.dropdown', function () { ma_hasPublisher_load_drop (); return false; });
+							</script> 
+						</form>
+
+		<!-- ..................................................................................... -->				
+						<!-- Anno -->
+						<form class="tab-pane fade" id="adl_hasPubYear">
+							<h3 class="modal-title">Anno di pubblicazione</h3>  
+							<p class="intesta_annotazioni">
+								<a class="fa fa-info-circle" href="#" data-toggle="tooltip" data-placement="bottom" title="Seleziona un anno e premi il tasto <Conferma> per confermare">
+									&nbsp;&nbsp;
+								</a>
+								Associa un anno di pubblicazione al documento
+							</p>
+							
+							<div class="input-group input_top">
+								<a id="calendar_hasPubYear" class="input-group-addon fa fa-calendar" href="#">&nbsp;</a>
+								<input id="anno_hasPubYear" name="anno_hasPubYear" type="text" class="form-control" placeholder="Anno" maxlength="4" style="width: 10em;">
+							</div>
+							
+							<div class="form-group input_top" style="margin-top: 2em;">
+								<div>
+									<a id="submit_hasPubYear" class="btn btn-primary" href="#" role="button">Conferma</a>
+								</div>
+								
+							</div>
+							<script type="text/javascript">
+								$('a#calendar_hasPubYear').unbind ('click');
+								$('a#calendar_hasPubYear').click (function() { ma_show_calendar_hasPubYear (); return false; });
+								$('a#submit_hasPubYear').unbind ('click');
+								$('a#submit_hasPubYear').click (function() { ma_hasPubYear (); return false; });
+							</script> 
+						</form>
+						
+						<style>.datepicker{z-index:1151;}</style>	<!-- Serve per portare in primo piano il calendario -->
+						
+						
+						
+		<!-- ..................................................................................... -->						
+						<!-- Titolo -->
+						<form class="tab-pane fade" id="adl_hasTitle">
+							<h3 class="modal-title">Titolo</h3>  
+							<p class="intesta_annotazioni">
+								<a class="fa fa-info-circle" href="#" data-toggle="tooltip" data-placement="bottom" title="Inserisci un titolo e premi il tasto <Conferma> per confermare">
+									&nbsp;&nbsp;
+								</a>
+								Associa un titolo al documento
+							</p>
+							
+							<div class="input-group input_top">
+								<textarea id="text_hasTitle" rows="4" type="text" class="form-control" placeholder="Titolo ..."></textarea>
+							</div>
+							
+							<div class="form-group input_top" style="margin-top: 2em;">
+								<div>
+									<a id="submit_hasTitle" class="btn btn-primary" href="#" role="button">Conferma</a>
+								</div>
+								
+							</div>
+							<script type="text/javascript">
+								$('a#submit_hasTitle').unbind ('click');
+								$('a#submit_hasTitle').click (function() { ma_hasTitle (); return false; });
+							</script> 
+						</form>
+						
+		<!-- ..................................................................................... -->
+						<!-- Titolo breve --> 
+						<form class="tab-pane fade" id="adl_hasShortTitle">
+							<h3 class="modal-title">Titolo breve</h3> 
+							<p class="intesta_annotazioni">
+								<a class="fa fa-info-circle" href="#" data-toggle="tooltip" data-placement="bottom" title="Inserisci un titolo breve e premi il tasto <Conferma> per confermare">
+									&nbsp;&nbsp;
+								</a>
+								Associa un titolo breve al documento
+							</p>
+							
+							<div class="input-group input_top">
+								<span class="input-group-addon input_head_em">Titolo</span>
+								<input id="text_hasShortTitle" name="text_hasShortTitle" type="text" class="form-control" placeholder="Identificativo" maxlength="80">
+							</div>
+							
+							<div class="form-group input_top">
+								<div>
+									<a id="submit_hasShortTitle" class="btn btn-primary" href="#" role="button">Conferma</a>
+								</div>
+							</div>
+							<script type="text/javascript">
+								$('a#submit_hasShortTitle').unbind ('click');
+								$('a#submit_hasShortTitle').click (function() { ma_hasShortTitle (); return false; });
+							</script> 
+						</form>
+						
+		<!-- ..................................................................................... -->						
+						<!-- Abstract --> 
+						<form class="tab-pane fade" id="adl_hasAbstract">
+							<h3 class="modal-title">Abstract</h3>  
+							<p class="intesta_annotazioni">
+								<a class="fa fa-info-circle" href="#" data-toggle="tooltip" data-placement="bottom" title="Inserisci un abstract e premi il tasto <Conferma> per confermare">
+									&nbsp;&nbsp;
+								</a>
+								Associa un abstract al documento
+							</p>
+							
+							<div class="input-group input_top">
+								<textarea id="text_hasAbstract" rows="4" type="text" class="form-control" placeholder="Abstract ..."></textarea>
+							</div>
+							
+							<div class="form-group input_top" style="margin-top: 2em;">
+								<div>
+									<a id="submit_hasAbstract" class="btn btn-primary" href="#" role="button">Conferma</a>
+								</div>
+								
+							</div>
+							<script type="text/javascript">
+								$('a#submit_hasAbstract').unbind ('click');
+								$('a#submit_hasAbstract').click (function() { ma_hasAbstract (); return false; });
+							</script>  
+						</form>
+						
+		<!-- ..................................................................................... -->						
+						<!-- Commento -->
+						<form class="tab-pane fade" id="adl_hasComment_doc">
+							<h3 class="modal-title">Commento</h3>  
+							<p class="intesta_annotazioni">
+								<a class="fa fa-info-circle" href="#" data-toggle="tooltip" data-placement="bottom" title="Inserisci un commento e premi il tasto <Conferma> per confermare">
+									&nbsp;&nbsp;
+								</a>
+								Associa un commento al documento
+							</p>
+							
+							<div class="input-group input_top">
+								<textarea id="text_hasComment_doc" rows="4" type="text" class="form-control" placeholder="Commento ..."></textarea>
+							</div>
+							
+							<div class="form-group input_top" style="margin-top: 2em;">
+								<div>
+									<a id="submit_hasComment_doc" class="btn btn-primary" href="#" role="button">Conferma</a>
+								</div>
+								
+							</div>
+							<script type="text/javascript">
+								$('a#submit_hasComment_doc').unbind ('click');
+								$('a#submit_hasComment_doc').click (function() { ma_hasComment_doc (); return false; });
+							</script>   
+						</form>
+						
+						<!-- ##################################################################### -->
+						<!-- ##################################################################### -->
+						<!-- ##################################################################### -->
+						<!-- Frammento -->
+						<!-- ##################################################################### -->
+						<!-- ##################################################################### -->
+						<!-- ##################################################################### -->
+						
+		<!-- ..................................................................................... -->
+						<!-- Persona -->
+						<form class="tab-pane fade" id="adl_denotesPerson">
+							<h3 class="modal-title color_denotesPerson">Persona</h3> 
+							<p class="intesta_annotazioni">
+								<a class="fa fa-info-circle" href="#" data-toggle="tooltip" data-placement="bottom" title="Seleziona una persona esistente oppure compila i campi sottostanti per aggiungerne una nuova">
+									&nbsp;&nbsp;
+								</a>
+								Associa una persona ad un frammento
+							</p>
+							<div id="dropdown_denotesPerson_parent" class="dropdown dropdown-top">
+								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu_denotesPerson" data-toggle="dropdown">
+									Seleziona una persona
+									<span class="caret"></span>
+								</button>
+								<ul id="dropdown_denotesPerson" class="dropdown-menu dropdown-scroll" role="menu" aria-labelledby="dropdownMenu_denotesPerson">
+									<li><a href="#">Sto caricando la lista ...</a></li>
+									<img class="wait_image" src="images/wait_circle.gif" />
+								</ul>
+							</div>
+							<div class="input-group input_top">
+								<span class="input-group-addon input_head_em">ID</span>
+								<input id="id_denotesPerson" name="id_denotesPerson" type="text" class="form-control" placeholder="Identificativo">
+							</div>
+							<div class="input-group input_top">
+								<span class="input-group-addon input_head_em">Nome</span>
+								<input id="nome_denotesPerson" name="nome_denotesPerson" type="text" class="form-control" placeholder="Nome e cognome">
+							</div>
+							<div class="input-group input_top">
+								<span class="input-group-addon input_head_em">Email</span>
+								<input id="email_denotesPerson" name="email_denotesPerson" type="text" class="form-control" placeholder="E-mail">
+							</div>
+							<div class="form-group input_top">
+								<div>
+									<a id="submit_denotesPerson" class="btn btn-primary" href="#" role="button">Conferma</a>
+								</div>
+							</div>
+							<script type="text/javascript">
+								$('a#submit_denotesPerson').unbind ('click');
+								$('a#submit_denotesPerson').click (function() { ma_denotesPerson (); return false; });
+								$('#dropdown_denotesPerson_parent').unbind ('shown.bs.dropdown');
+								$('#dropdown_denotesPerson_parent').on ('shown.bs.dropdown', function () { ma_denotesPerson_load_drop (); return false; });
+							</script> 
+						</form>
+
+		<!-- ..................................................................................... -->				
+						<!-- Luogo -->
+						<form class="tab-pane fade" id="adl_denotesPlace"> 
+							<h3 class="modal-title color_denotesPlace">Luogo</h3> 
+							<p class="intesta_annotazioni">
+								<a class="fa fa-info-circle" href="#" data-toggle="tooltip" data-placement="bottom" title="Seleziona un luogo esistente oppure compila i campi sottostanti per aggiungerne un nuovo">
+									&nbsp;&nbsp;
+								</a>
+								Associa un luogo ad un frammento
+							</p>
+							<div id="dropdown_denotesPlace_parent" class="dropdown dropdown-top">
+								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu_denotesPlace" data-toggle="dropdown">
+									Seleziona un luogo
+									<span class="caret"></span>
+								</button>
+								<ul id="dropdown_denotesPlace" class="dropdown-menu dropdown-scroll" role="menu" aria-labelledby="dropdownMenu_denotesPlace">
+									<li><a href="#">Sto caricando la lista ...</a></li>
+									<img class="wait_image" src="images/wait_circle.gif" />
+								</ul>
+							</div>
+							<div class="input-group input_top">
+								<span class="input-group-addon input_head_em">ID</span>
+								<input id="id_denotesPlace" name="id_denotesPlace" type="text" class="form-control" placeholder="Identificativo">
+							</div>
+							<div class="input-group input_top">
+								<span class="input-group-addon input_head_em">Luogo</span>
+								<input id="nome_denotesPlace" name="nome_denotesPlace" type="text" class="form-control" placeholder="Nome luogo">
+							</div>
+							<div class="form-group input_top">
+								<div>
+									<a id="submit_denotesPlace" class="btn btn-primary" href="#" role="button">Conferma</a>
+								</div>
+							</div>
+							<script type="text/javascript">
+								$('a#submit_denotesPlace').unbind ('click');
+								$('a#submit_denotesPlace').click (function() { ma_denotesPlace (); return false; });
+								$('#dropdown_denotesPlace_parent').unbind ('shown.bs.dropdown');
+								$('#dropdown_denotesPlace_parent').on ('shown.bs.dropdown', function () { ma_denotesPlace_load_drop (); return false; });
+							</script> 
+						</form>
+						
+		<!-- ..................................................................................... -->
+						<!-- Malattia -->
+						<form class="tab-pane fade" id="adl_denotesDisease">
+							<h3 class="modal-title color_denotesDisease">Malattia</h3>  
+							<p class="intesta_annotazioni">
+								<a class="fa fa-info-circle" href="#" data-toggle="tooltip" data-placement="bottom" title="Seleziona una malattia esistente oppure compila i campi sottostanti per aggiungerne una nuova">
+									&nbsp;&nbsp;
+								</a>
+								Associa una malattia ad un frammento
+							</p>
+							<div id="dropdown_denotesDisease_parent" class="dropdown dropdown-top">
+								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu_denotesDisease" data-toggle="dropdown">
+									Seleziona una malattia
+									<span class="caret"></span>
+								</button>
+								<ul id="dropdown_denotesDisease" class="dropdown-menu dropdown-scroll" role="menu" aria-labelledby="dropdownMenu_denotesDisease">
+									<li><a href="#">Sto caricando la lista ...</a></li>
+									<img class="wait_image" src="images/wait_circle.gif" />
+								</ul>
+							</div>
+							<div class="input-group input_top">
+								<span class="input-group-addon input_head_em">ID</span>
+								<input id="id_denotesDisease" name="id_denotesDisease" type="text" class="form-control" placeholder="Identificativo">
+								<span class="input-group-btn">
+                                    <button id="set_prefix_denotesDisease" class="btn btn-success" type="button">Prefix</button>
+                                </span>
+							</div>
+							<div class="input-group input_top">
+								<span class="input-group-addon input_head_em">Malattia</span>
+								<input id="nome_denotesDisease" name="nome_denotesDisease" type="text" class="form-control" placeholder="Nome malattia">
+							</div>
+							<div class="form-group input_top">
+								<div>
+									<a id="submit_denotesDisease" class="btn btn-primary" href="#" role="button">Conferma</a>
+								</div>
+							</div>
+							<script type="text/javascript">
+								$('a#submit_denotesDisease').unbind ('click');
+								$('a#submit_denotesDisease').click (function() { ma_denotesDisease (); return false; });
+								$('#dropdown_denotesDisease_parent').unbind ('shown.bs.dropdown');
+								$('#dropdown_denotesDisease_parent').on ('shown.bs.dropdown', function () { ma_denotesDisease_load_drop (); return false; });
+								$('#set_prefix_denotesDisease').click (function() { ma_denotesDisease_setPrefix (); return false; });
+							</script> 
+						</form>
+						
+		<!-- ..................................................................................... -->						
+						<!-- Argomento -->
+						<form class="tab-pane fade" id="adl_hasSubject">
+							<h3 class="modal-title color_hasSubject">Argomento</h3>  
+							<p class="intesta_annotazioni">
+								<a class="fa fa-info-circle" href="#" data-toggle="tooltip" data-placement="bottom" title="Seleziona un argomento esistente oppure compila i campi sottostanti per aggiungerne uno nuovo">
+									&nbsp;&nbsp;
+								</a>
+								Associa un argomento ad un frammento
+							</p>
+							<div id="dropdown_hasSubject_parent" class="dropdown dropdown-top">
+								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu_hasSubject" data-toggle="dropdown">
+									Seleziona un argomento
+									<span class="caret"></span>
+								</button>
+								<ul id="dropdown_hasSubject" class="dropdown-menu dropdown-scroll" role="menu" aria-labelledby="dropdownMenu_hasSubject">
+									<li><a href="#">Sto caricando la lista ...</a></li>
+									<img class="wait_image" src="images/wait_circle.gif" />
+								</ul>
+							</div>
+							<div class="input-group input_top">
+								<span class="input-group-addon input_head_em">ID</span>
+								<input id="id_hasSubject" name="id_hasSubject" type="text" class="form-control" placeholder="Identificativo">
+								<span class="input-group-btn">
+                                    <button id="set_prefix_hasSubject" class="btn btn-success" type="button">Prefix</button>
+                                </span>
+							</div>
+							<div class="input-group input_top">
+								<span class="input-group-addon input_head_em">Argomento</span>
+								<input id="nome_hasSubject" name="nome_hasSubject" type="text" class="form-control" placeholder="Argomento">
+							</div>
+							<div class="form-group input_top">
+								<div>
+									<a id="submit_hasSubject" class="btn btn-primary" href="#" role="button">Conferma</a>
+								</div>
+							</div>
+							<script type="text/javascript">
+								$('a#submit_hasSubject').click (function() { ma_hasSubject (); return false; });
+								$('#dropdown_hasSubject_parent').on ('shown.bs.dropdown', function () { ma_hasSubject_load_drop (); return false; });
+								$('#set_prefix_hasSubject').click (function() { ma_hasSubject_setPrefix (); return false; });
+							</script> 
+						</form>
+						
+		<!-- ..................................................................................... -->						
+						<!-- DBPedia-->
+						<form class="tab-pane fade" id="adl_relatesTo">
+							<h3 class="modal-title color_relatesTo">DBPedia</h3>  
+							<p class="intesta_annotazioni">
+								<a class="fa fa-info-circle" href="#" data-toggle="tooltip" data-placement="bottom" title="Seleziona una voce esistente oppure compila i campi sottostanti per aggiungerne una nuova">
+									&nbsp;&nbsp;
+								</a>
+								Associa un riferimento DBPedia ad un frammento
+							</p>
+							<div id="dropdown_relatesTo_parent" class="dropdown dropdown-top">
+								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu_relatesTo" data-toggle="dropdown">
+									Seleziona un riferimento
+									<span class="caret"></span>
+								</button>
+								<ul id="dropdown_relatesTo" class="dropdown-menu dropdown-scroll" role="menu" aria-labelledby="dropdownMenu_relatesTo">
+									<li><a href="#">Sto caricando la lista ...</a></li>
+									<img class="wait_image" src="images/wait_circle.gif" />
+								</ul>
+							</div>
+
+							<!-- pannello di RICERCA -->
+							<div id="collapse_relatesTo" class="panel-group" style="margin-top: 1em;">
+								<div class="panel panel-default">
+									<div class="panel-heading" style="height: 1.5em">
+										<h4 class="panel-title" style="border-top: -0.5em; margin-top: -0.5em; padding-top: -0.5em; ">
+											<a data-toggle="collapse" data-parent="#collapse_relatesTo" href="#collapse_relatesTo_button">
+												Ricerca termine
+											</a>
+										</h4>
+									</div>
+								    <div id="collapse_relatesTo_button" class="panel-collapse collapse" style="height: 1em; ">
+										<div class="panel-body">
+											<div class="input-group">
+												<span class="input-group-btn">
+													<button id="dbFind_relatesTo_button" class="btn btn-success" type="button">Ricerca</button>
+												</span>
+												<input id="dbFind_relatesTo_input" type="text" class="form-control" placeholder="Termine o concetto">
+											</div>
+											
+											<div id="dbResult_relatesTo" class="list-group" style="margin-top: 1em; height: 20em; overflow: auto;">
+												<!-- ma_dbResult_relatesTo () -->
+											</div>
+										</div>
+								    </div>
+								</div>
+							</div>
+							<!-- .......................... -->
+							
+							<div class="input-group input_top">
+								<span class="input-group-addon input_head_em">ID</span>
+								<input id="id_relatesTo" name="id_relatesTo" type="text" class="form-control" placeholder="Identificativo">
+							</div>
+							<div class="input-group input_top">
+								<span class="input-group-addon input_head_em">Etichetta</span>
+								<input id="nome_relatesTo" name="nome_relatesTo" type="text" class="form-control" placeholder="Etichetta">
+							</div>
+							<div class="form-group input_top">
+								<div>
+									<a id="submit_relatesTo" class="btn btn-primary" href="#" role="button">Conferma</a>
+								</div>
+							</div>
+							<script type="text/javascript">
+								$('#dbFind_relatesTo_button').unbind ('click');
+								$('#dbFind_relatesTo_button').click (function() { ma_dbResult_relatesTo_button (); return false; });
+								$('a#submit_relatesTo').unbind ('click');
+								$('a#submit_relatesTo').click (function() { ma_relatesTo (); return false; });
+								$('#dropdown_relatesTo_parent').unbind ('shown.bs.dropdown');
+								$('#dropdown_relatesTo_parent').on ('shown.bs.dropdown', function () { ma_relatesTo_load_drop (); return false; });
+							</script> 
+						</form>
+						
+						
+		<!-- ..................................................................................... -->
+						<!-- Chiarezza -->
+						<form class="tab-pane fade" id="adl_hasClarityScore">
+							<h3 class="modal-title color_hasClarity">Chiarezza</h3>  
+							<p class="intesta_annotazioni">
+								<a class="fa fa-info-circle" href="#" data-toggle="tooltip" data-placement="bottom" title="Seleziona un giudizio e premi il tasto <Conferma> per confermare">
+									&nbsp;&nbsp;
+								</a>
+								Esprimi un giudizio sulla chiarezza del frammento
+							</p>
+							
+							<div id="adl_hasClarityScore_radio" class="btn-group-vertical" style="width: 10em;">
+  								<button type="button" class="btn btn-success" valore="excellent">Ottimo</button>
+  								<button type="button" class="btn btn-success" valore="good">Valido</button>
+  								<button type="button" class="btn btn-warning" valore="fair">Chiaro</button>
+  								<button type="button" class="btn btn-danger" valore="poor">Mediocre</button>
+  								<button type="button" class="btn btn-danger" valore="very poor">Pessimo</button>
+							</div>
+							
+							<div class="form-group input_top" style="margin-top: 2em;">
+								<div>
+									<a id="submit_hasClarityScore" class="btn btn-primary" href="#" role="button">Conferma</a>
+								</div>
+								
+							</div>
+							<script type="text/javascript">
+                                $('a#submit_hasClarityScore').click (function() { ma_hasClarityScore (); return false; });
+                                $('#adl_hasClarityScore_radio > button').click (function() { ma_radio_button ("adl_hasClarityScore_radio",$(this)); return false; });
+                            </script>
+						</form>
+						
+		<!-- ..................................................................................... -->						
+						<!-- Originalità --> 
+						<form class="tab-pane fade" id="adl_hasOriginalityScore">
+							<h3 class="modal-title color_hasOriginality">Originalità</h3>  
+							<p class="intesta_annotazioni">
+								<a class="fa fa-info-circle" href="#" data-toggle="tooltip" data-placement="bottom" title="Seleziona un giudizio e premi il tasto <Conferma> per confermare">
+									&nbsp;&nbsp;
+								</a>
+								Esprimi un giudizio sull'originalità del frammento
+							</p>
+							
+							<div id="adl_hasOriginalityScore_radio" class="btn-group-vertical" style="width: 10em;">
+  								<button type="button" class="btn btn-success" valore="excellent">Ottimo</button>
+  								<button type="button" class="btn btn-success" valore="good">Valido</button>
+  								<button type="button" class="btn btn-warning" valore="fair">Chiaro</button>
+  								<button type="button" class="btn btn-danger" valore="poor">Mediocre</button>
+  								<button type="button" class="btn btn-danger" valore="very poor">Pessimo</button>
+							</div>
+							
+							<div class="form-group input_top" style="margin-top: 2em;">
+								<div>
+									<a id="submit_hasOriginalityScore" class="btn btn-primary" href="#" role="button">Conferma</a>
+								</div>
+								
+							</div>
+							<script type="text/javascript">
+                                $('a#submit_hasOriginalityScore').click (function() { ma_hasOriginalityScore (); return false; });
+                                $('#adl_hasOriginalityScore_radio > button').click (function() { ma_radio_button ("adl_hasOriginalityScore_radio",$(this)); return false; });
+                            </script> 
+						</form>
+						
+		<!-- ..................................................................................... -->
+						<!-- Presentazione -->
+						<form class="tab-pane fade" id="adl_hasFormattingScore">
+							<h3 class="modal-title color_hasFormatting">Presentazione</h3>  
+							<p class="intesta_annotazioni">
+								<a class="fa fa-info-circle" href="#" data-toggle="tooltip" data-placement="bottom" title="Seleziona un giudizio e premi il tasto <Conferma> per confermare">
+									&nbsp;&nbsp;
+								</a>
+								Esprimi un giudizio sulla presentazione e formattazione del frammento
+							</p>
+							
+							<div id="adl_hasFormattingScore_radio" class="btn-group-vertical" style="width: 10em;">
+  								<button type="button" class="btn btn-success" valore="excellent">Ottimo</button>
+  								<button type="button" class="btn btn-success" valore="good">Valido</button>
+  								<button type="button" class="btn btn-warning" valore="fair">Chiaro</button>
+  								<button type="button" class="btn btn-danger" valore="poor">Mediocre</button>
+  								<button type="button" class="btn btn-danger" valore="very poor">Pessimo</button>
+							</div>
+							
+							<div class="form-group input_top" style="margin-top: 2em;">
+								<div>
+									<a id="submit_hasFormattingScore" class="btn btn-primary" href="#" role="button">Conferma</a>
+								</div>
+								
+							</div>
+							<script type="text/javascript">
+                                $('a#submit_hasFormattingScore').click (function() { ma_hasFormattingScore (); return false; });
+                                $('#adl_hasFormattingScore_radio > button').click (function() { ma_radio_button ("adl_hasFormattingScore_radio",$(this)); return false; });
+                            </script> 
+						</form>
+						
+		<!-- ..................................................................................... -->
+						<!-- Citazione -->
+                        <form class="tab-pane fade" id="adl_cites">
+                            <h3 class="modal-title color_cites">Citazione</h3> 
+                            <p class="intesta_annotazioni">
+                                <a class="fa fa-info-circle" href="#" data-toggle="tooltip" data-placement="bottom" title="Seleziona una documento interno oppure compila i campi sottostanti per indicare un documento esterno">
+                                    &nbsp;&nbsp;
+                                </a>
+                                Associa un documento ad un frammento
+                            </p>
+                            <div id="dropdown_cites_parent" class="dropdown dropdown-top">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu_cites" data-toggle="dropdown">
+                                    Seleziona un documento interno
+                                </button>
+                                <ul id="dropdown_cites" class="dropdown-menu dropdown-scroll" role="menu" aria-labelledby="dropdownMenu_cites">
+                                    <li><a href="#">Sto caricando la lista ...</a></li>
+                                    <img class="wait_image" src="images/wait_circle.gif" />
+                                </ul>
+                            </div>
+                            <div class="input-group input_top">
+                                <span class="input-group-addon input_head_em">URL</span>
+                                <input id="url_cites" name="url_cites" type="text" class="form-control" placeholder="es: http://www.google.it" onblur="ma_cites_add_http ()">
+                            </div>
+                            <div id="dropdown_cites_wait_me">
+                            </div>
+                            <div class="input-group input_top">
+                                <span class="input-group-addon input_head_em">Titolo</span>
+                                <input id="titolo_cites" name="titolo_cites" type="text" class="form-control" placeholder="Titolo">
+                                <span class="input-group-btn">
+                                    <button id="get_titolo_cites" class="btn btn-success" type="button">Auto</button>
+                                </span>
+                            </div>
+                            <div class="form-group input_top">
+                                <div>
+                                    <a id="submit_cites" class="btn btn-primary" href="#" role="button">Conferma</a>
+                                </div>
+                            </div>
+                            <script type="text/javascript">
+                                $('#get_titolo_cites').unbind ('click');
+                                $('#get_titolo_cites').click (function() { ma_cites_get_titolo (''); return false; });
+                                $('a#submit_cites').unbind ('click');
+                                $('a#submit_cites').click (function() { ma_cites (); return false; });
+                                //$('#titolo_cites').unbind ('shown.bs.dropdown');
+                                //$('#titolo_cites').on ('shown.bs.dropdown', function () { ma_cites_load_drop (); return false; });
+                                $('#dropdown_cites_parent').unbind ('shown.bs.dropdown');
+                                $('#dropdown_cites_parent').on ('shown.bs.dropdown', function () { ma_cites_load_drop (); return false; });
+                            </script> 
+                        </form>
+						
+		<!-- ..................................................................................... -->						
+						<!-- Commento --> 
+						<form class="tab-pane fade" id="adl_hasComment">
+							<h3 class="modal-title color_hasComment">Commento</h3>  
+							<p class="intesta_annotazioni">
+								<a class="fa fa-info-circle" href="#" data-toggle="tooltip" data-placement="bottom" title="Inserisci un commento e premi il tasto <Conferma> per confermare">
+									&nbsp;&nbsp;
+								</a>
+								Commenta il frammento
+							</p>
+							
+							<div class="input-group input_top">
+								<textarea id="text_hasComment" rows="4" type="text" class="form-control" placeholder="Commento ..."></textarea>
+							</div>
+							
+							<div class="form-group input_top" style="margin-top: 2em;">
+								<div>
+									<a id="submit_hasComment" class="btn btn-primary" href="#" role="button">Conferma</a>
+								</div>
+							</div>
+							<script type="text/javascript">
+                                $('a#submit_hasComment').click (function() { ma_hasComment (); return false; });
+                            </script> 
+						</form>
+						
+		<!-- ..................................................................................... -->						
+						
+					</div> 
+				</div>
+      		</div>
+			<div class="modal-footer">
+				<div class="panel panel-default" style="float: left; padding: 0px; margin: 0px; height: 3em; border: none; ">
+                    <div class="panel-body" style="padding-top: 0.3em; float: none; ">
+                        <h6 id="credenziali_nome_modal_annotazioni" style="text-align: left; color: CornflowerBlue; font-weight: bold; margin: 0px; ">&nbsp;</h6>
+                        <h6 id="credenziali_email_modal_annotazioni" style="text-align: left; color: CornflowerBlue; padding: 0px; margin: 0px; ">&nbsp;</h6>
+                    </div>
+                </div>
+				<button id="button_exit_modal_annotazioni" type="button" class="btn btn-primary" data-dismiss="modal">Chiudi</button>
+      		</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$('#button_exit_modal_annotazioni').click (function() { ma_exit_with_or_withoutyou (); return false; });
+</script>
+
+<!-- ##################################################################################### -->
+<!-- ##################################################################################### -->
+<!-- ##################################################################################### -->
+<!-- ### MODIFICA ######################################################################## -->
+<!-- ##################################################################################### -->
+<!-- ##################################################################################### -->
+<!-- ##################################################################################### -->
+
+
+<div id="annotaDoc_modifica" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h2 class="modal-title">Annotazioni</h2>
+				<h4 class="modal-title">Pendenti</h4>
+			</div>
+			
+			<!-- ###### COLLAPSE 1 ##################################### -->
+			<div class="panel-group" id="adm_table">
+				<div class="panel panel-info">
+					<div class="panel-heading" style="height: 1.5em;">
+						<h4 class="panel-title" style="margin-top: -0.6em; ">
+							<a id="a_adm_table" class="fa fa-sort" data-toggle="collapse" data-parent="#adm_table" href="#adm_collapse_table">
+								&nbsp;Tabella
+							</a>
+						</h4>
+					</div>
+				    <div id="adm_collapse_table" class="panel-collapse collapse in">
+						<div class="panel-body">
+							
+							<!-- tabella -->
+							<div id="annotaDoc_modifica_corpo" class="modal-body" style="margin-top: -1.5em; ">
+								<div class="table-responsive">
+									<table id="annotaDoc_modifica_table" class="table table-striped" style="table-layout: fixed;">
+										<thead>
+											<tr>
+												<th style="width: 8em;">Classe</th>
+												<th style="width: 15em; ">Valore</th>
+												<th style="width: 11em; ">Frammento</th>
+												<th style="width: 5em; ">Azioni</th>
+											</tr>
+										</thead>
+										<tbody id="annotaDoc_modifica_table_body">
+											<tr>
+												<td class="fa fa-moon-o" style="color: green;">&nbsp;</td>
+												<td class="fa fa-moon-o" style="color: green;">&nbsp;</td>
+												<td class="fa fa-moon-o" style="color: green;">&nbsp;</td>
+												<td class="fa fa-moon-o" style="color: green;">&nbsp;</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<!-- END tabella -->
+							
+						</div>
+				    </div>
+				</div>
+			</div>
+			<!-- END COLLAPSE 1 -->
+			
+			<!-- ###### COLLAPSE 2 ##################################### -->
+			<div class="panel-group" id="adm_table_mody" style="margin-top: -1.8em; ">
+				<div class="panel panel-info">
+					<div class="panel-heading" style="height: 1.5em;">
+						<h4 class="panel-title" style="margin-top: -0.6em; ">
+							<a id="a_adm_table_mody" class="fa fa-sort" data-toggle="collapse" data-parent="#adm_table_mody" href="#adm_collapse_table_mody">		 
+								&nbsp;Modifica
+							</a>
+						</h4>
+					</div>
+				    <div id="adm_collapse_table_mody" class="panel-collapse collapse">
+						<div id="adm_table_mody_body" class="panel-body">
+							&nbsp;
+						</div>
+				    </div>
+				</div>
+			</div>
+			<!-- END COLLAPSE 2 -->
+
+			<div id="annotaDoc_modifica_salva_chiudi" class="modal-footer">
+				<button id="annotaDoc_modifica_salva" type="button" class="btn btn-warning" data-dismiss="modal" >Salva sul 3Store</button>
+				<button id="annotaDoc_modifica_chiudi" type="button" class="btn btn-primary" data-dismiss="modal" >Chiudi</button>
+				
+				<script type="text/javascript">
+				    $('#annotaDoc_modifica_salva').unbind ('click');
+                    $('#annotaDoc_modifica_salva').click (function() { annotaDoc_modifica_salva (); return false; });
+                    $('#annotaDoc_modifica_chiudi').unbind ('click');
+                    $('#annotaDoc_modifica_chiudi').click (function() { annotaDoc_modifica_chiudi (); return false; });
+                    $('#a_adm_table').unbind ('click');
+                    $('#a_adm_table').click (function() { annotaDoc_modifica_collapse_openclose (1); return false; });
+                    $('#a_adm_table_mody').unbind ('click');
+                    $('#a_adm_table_mody').click (function() { annotaDoc_modifica_collapse_openclose (2); return false; });
+                </script>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+<!-- ##################################################################################### -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
